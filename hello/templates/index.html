@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{% static 'css\styles1.css' %}" />
+    <title>Академия джедаев</title>
+    <div class="container">
+        <div class="row">
+            <div align="center">
+                <font size="+4">
+                    <h1>Академия джедаев</h1>
+                </font>
+                <style>
+                    .myfield{
+                    color: white;
+                    }
+                </style>
+                    <form action="http://127.0.0.1:8000/djedays" method="POST" novalidate>
+                    {% csrf_token %}
+                        <input type="submit" value="Для Джедаев" style="width:200px; height:70px;margin: 20px;background: Gold;font-size: 15pt;">
+                    </form>
+                <form action="http://127.0.0.1:8000/candidat" method="POST" novalidate>
+                    {% csrf_token %}
+                    <input type="submit" value="Для кандидатов"style="width:200px; height:70px;background: DarkTurquoise;font-size: 15pt;">
+                </form>
+            </div>
+        </div>
+    </div>
+</head>
+<body id = "bg" style="background-image: url('{% static "images\stars.jpg"%}')";>
+    <font class="myfield">
+        <table>
+            {{ form }}
+        </table>
+    </font>
+
+</body>
+</html>

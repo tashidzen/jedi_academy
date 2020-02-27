@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="ru">
+<table>
+    <head>
+        <div class="container">
+            <div class="row">
+                <div align="center">
+                    <font class="myfield">
+
+                            <h2>Имя Джедая</h2>
+                            <div>{{ form1.name }}</div>
+                            <h2>Планета</h2>
+                            <div>{{ form1.planet }}</div>
+                            <h2>Кандидаты этой планеты:</h2>
+                            <div>{{ form2.name }}</div>
+                            <div>{{ form2.planet }}</div>
+
+                    </font>
+                    <form action="/" method="POST">
+                    {% csrf_token %}
+                    <style>
+                        .myfield{
+                        color: white;
+                        }
+                    </style>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+<body id = "bg" style="background-image: url('{% static "images\stars.jpg"%}')";>
+
+    </body>
+    </head>
+
+</table>

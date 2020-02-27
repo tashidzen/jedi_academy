@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<div lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{% static 'css\styles1.css' %}" />
+    <title>Академия джедаев</title>
+    <div align="center">
+    <h1>Вопросы</h1>
+    </div>
+    <style>
+        .myfield{
+            color: white;
+        }
+    </style>
+</head>
+<body id = "bg" style="background-image: url('{% static "images\stars.jpg"%}')";>
+    <font class="myfield">
+        <div align="center">
+        <table>
+            {{ form }}
+        </table>
+
+    <form action="/" method="POST" novalidate>
+        {% csrf_token %}
+        <input type="submit" value="Отправить" >
+    </form>
+        </div>
+    </font>
+</body>
+</html>
